@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row pt-5 pb-5">
+        <div class="col-md-6">
+            <div class="card bg-light">
+                <div class="card-header">
+                    <h6>JWT generated</h6>
+                </div>
+                <div class="card-body">
+                    <pre>{{accessToken | json}}</pre>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card bg-light">
+                <div class="card-header">
+                    <h6>Authenticated user's details</h6>
+                </div>
+                <div class="card-body">
+                    <pre>{{accessTokenDetails | json}}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex flex-row justify-content-center align-content-center">
+            <button class="btn btn-danger" (click)="logout()" [disabled]="loading">Logout</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col d-flex flex-row justify-content-center align-content-center pt-5 pb-5">
+            <div class="card">
+                <div class="card-body">
+                    <form [formGroup]="form" (submit)="login()">
+                        <h5 class="card-title">Authentication form</h5>
+                        <p class="card-text">Fill the following form and click on the <strong>Login</strong> button to
+                            access the home page</p>
+                        <div class="row" *ngIf="errors">
+                            <div class="col">
+                                <div class="alert alert-danger">
+                                    <strong>Oops!</strong> You have entered invalid credentials
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <input type="email" id="email" formControlName="email" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" formControlName="password" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex flex-row justify-content-center align-content-center">
+                                <button type="submit" class="btn btn-dark col-12" [disabled]="loading">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
